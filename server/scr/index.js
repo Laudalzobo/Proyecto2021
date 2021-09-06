@@ -34,4 +34,4 @@ var Server = /** @class */ (function () {
     return Server;
 }());
 var server = new Server();
-server.start;
+server.start();

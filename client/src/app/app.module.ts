@@ -9,11 +9,17 @@ import { EmpleadoFormComponent } from './components/empleado-form/empleado-form.
 import { EmpleadoListComponent } from './components/empleado-list/empleado-list.component';
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { PrincipalComponent } from './components/principal/principal.component';
 
+import { EmpleadoService } from './services/empleado.service';
+ 
 
 const routes: Routes = [
-  {path: '', component: NavigationComponent},
+  
   {path: 'InicioSesion', component: InicioSesionComponent},
+  {path: '', component: PrincipalComponent},
+  {path: 'ListaEmpleados', component: EmpleadoListComponent}
+
 ]
 
 
@@ -35,7 +41,9 @@ const routes: Routes = [
     AppRoutingModule,
     FormsModule,
     HttpClientModule],
-  providers: [],
+  providers: [
+    EmpleadoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
