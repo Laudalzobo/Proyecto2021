@@ -37,7 +37,6 @@ class ObjetoController {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO empleado set ?', [req.body], function (err, result, fields) {
                 res.json({ messsage: 'Empleado guardado' });
-                res.json({ empleado: result });
             });
         });
     }

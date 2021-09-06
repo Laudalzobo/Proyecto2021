@@ -23,7 +23,8 @@ var empleado_service_1 = require("./services/empleado.service");
 var routes = [
     { path: 'InicioSesion', component: inicio_sesion_component_1.InicioSesionComponent },
     { path: '', component: principal_component_1.PrincipalComponent },
-    { path: 'ListaEmpleados', component: empleado_list_component_1.EmpleadoListComponent }
+    { path: 'ListaEmpleados', component: empleado_list_component_1.EmpleadoListComponent },
+    { path: 'CreaEmpleados', component: empleado_form_component_1.EmpleadoFormComponent },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {

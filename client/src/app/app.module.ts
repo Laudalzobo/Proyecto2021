@@ -12,14 +12,15 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { PrincipalComponent } from './components/principal/principal.component';
 
 import { EmpleadoService } from './services/empleado.service';
+
  
 
 const routes: Routes = [
   
   {path: 'InicioSesion', component: InicioSesionComponent},
-  {path: '', component: PrincipalComponent},
-  {path: 'ListaEmpleados', component: EmpleadoListComponent}
-
+  {path: '', component: PrincipalComponent},  
+  {path: 'ListaEmpleados', component: EmpleadoListComponent},
+  {path: 'CreaEmpleados', component: EmpleadoFormComponent},
 ]
 
 

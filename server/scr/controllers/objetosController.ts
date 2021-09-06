@@ -9,7 +9,7 @@ class ObjetoController {
         await pool.query('SELECT * FROM empleado', function(err, result, fields) {
             if (err) throw err;
             res.json(result);
-        })
+        });
   
     } 
 
@@ -26,7 +26,7 @@ class ObjetoController {
     public async create (req: Request, res: Response): Promise<void> {
         await pool.query('INSERT INTO empleado set ?', [req.body], function(err,result,fields) {
             res.json({messsage: 'Empleado guardado'});
-            res.json({empleado:result});
+           
         });
             
           
