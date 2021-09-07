@@ -12,15 +12,21 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { PrincipalComponent } from './components/principal/principal.component';
 
 import { EmpleadoService } from './services/empleado.service';
+import { ObraFormComponent } from './components/obra-form/obra-form.component';
+import { ObrasService } from './services/obras.service';
+import { ObraListComponent } from './components/obra-list/obra-list.component';
 
  
 
 const routes: Routes = [
   
-  {path: 'InicioSesion', component: InicioSesionComponent},
+  {path: 'InicioSesion', component: ObraListComponent},
   {path: '', component: PrincipalComponent},  
   {path: 'ListaEmpleados', component: EmpleadoListComponent},
   {path: 'CreaEmpleados', component: EmpleadoFormComponent},
+  {path: 'ListaObras', component: ObraListComponent},
+  {path: 'CrearObra', component: ObraFormComponent},
+
 ]
 
 
@@ -31,7 +37,9 @@ const routes: Routes = [
     EmpleadoFormComponent,
     EmpleadoListComponent,
     NavigationComponent,
-    InicioSesionComponent
+    InicioSesionComponent,
+    ObraFormComponent,
+    ObraListComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +51,8 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule],
   providers: [
-    EmpleadoService
+    EmpleadoService,
+    ObrasService
   ],
   bootstrap: [AppComponent]
 })

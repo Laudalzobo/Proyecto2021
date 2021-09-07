@@ -13,3 +13,17 @@ CREATE TABLE empleado(
 
 
 DESCRIBE empleado;
+
+
+
+
+
+CREATE TABLE obra(
+id INT NOT NULL AUTO_INCREMENT,
+nombre VARCHAR(25),
+altura INT(9),
+localidad VARCHAR(25),
+provincia VARCHAR(25),
+fechaInicio DATE
+
+);
