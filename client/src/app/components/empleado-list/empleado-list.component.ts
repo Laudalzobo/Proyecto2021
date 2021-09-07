@@ -20,4 +20,16 @@ export class EmpleadoListComponent implements OnInit {
     )
   }
 
+
+  eliminarEmpleado(id: string){
+    this.empleadoService.deleteEmpleado(id).subscribe(
+      res => {
+        console.log(res)
+      
+      },
+      err => console.log(err)
+    )
+     location.reload();
+   }
+
 }

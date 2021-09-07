@@ -12,7 +12,7 @@ export class EmpleadoFormComponent implements OnInit {
 
 constructor(private empleadoService: EmpleadoService) { }
 empleado: Empleado = {
-  id: 0,
+  
   nombre: '',
   apellido: '',
   dni: 0,
@@ -24,6 +24,9 @@ empleado: Empleado = {
   
 };
   ngOnInit(): void {}
+
+
+
 
   guardarEmpleado() {
    delete this.empleado.created_at;

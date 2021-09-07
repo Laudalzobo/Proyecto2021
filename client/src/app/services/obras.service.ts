@@ -12,19 +12,19 @@ export class ObrasService {
   constructor(private http: HttpClient) { }
 
   getObras(){
-    return this.http.get('http://localhost:3000/api/obras');
+    return this.http.get(`http://localhost:3000/api/obras`);
   }
 
   getObra(id: string){
-    return this.http.get('http://localhost:3000/api/obras{id}');
+    return this.http.get(`http://localhost:3000/api/obras${id}`);
   }
 
   saveObra(obra: Obra){
-    return this.http.post('http://localhost:3000/api/obras',obra);
+    return this.http.post(`http://localhost:3000/api/obras`,obra);
   }
 
   deleteObra( id: string){
-    return this.http.delete('http://localhost:3000/api/obras/{id}');
+    return this.http.delete(`http://localhost:3000/api/obras/${id}`);
   }
 
   updateObra(id: string, updatedObra: Obra): Observable<Obra>{

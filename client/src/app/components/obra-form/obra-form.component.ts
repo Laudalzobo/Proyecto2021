@@ -12,15 +12,18 @@ export class ObraFormComponent implements OnInit {
   opcionSeleccionado: string  = '0';
   verSeleccion: string        = '';
  datos: any;
+ provincias: any;
   @HostBinding('class') classes = "row";
 
   constructor(private obrasService: ObrasService) {
     this.datos = ["Buenos Aires","Entre rios"];
+    this.provincias = ["La Plata", "Berisso"]
    }
   
   obra: Obra ={
     id: 0,
     nombre: '',
+    calle: '',
     altura: 0,
     localidad: '',
     provincia: '',
@@ -36,6 +39,10 @@ capturar() {
   this.verSeleccion = this.opcionSeleccionado; 
 }
 
+capturarLocalidad() {
+  this.verSeleccion = this.opcionSeleccionado; 
+
+}
 
   guardarObra() {
  

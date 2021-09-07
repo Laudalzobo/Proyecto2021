@@ -12,22 +12,22 @@ export class EmpleadoService {
   constructor(private http: HttpClient) { }
 
   getEmpleados(){
-    return this.http.get('http://localhost:3000/api/objeto');
+    return this.http.get(`http://localhost:3000/api/objeto`);
   }
 
   getEmpleado(id: string){
-    return this.http.get('http://localhost:3000/api/objeto${id}');
+    return this.http.get(`http://localhost:3000/api/objeto${id}`);
   }
 
   saveEmpleado(empleado: Empleado){
-    return this.http.post('http://localhost:3000/api/objeto',empleado);
+    return this.http.post(`http://localhost:3000/api/objeto`,empleado);
   }
 
   deleteEmpleado( id: string){
-    return this.http.delete('http://localhost:3000/api/objeto/{id}');
+    return this.http.delete(`http://localhost:3000/api/objeto/${id}`);
   }
 
   updateEmpleado(id: string, updatedEmpleado: Empleado): Observable<Empleado>{
-    return this.http.put('http://localhost:3000/api/objeto/${id}', updatedEmpleado);
+    return this.http.put(`http://localhost:3000/api/objeto/${id}`, updatedEmpleado);
   }
 }
