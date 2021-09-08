@@ -38,6 +38,7 @@ empleado: Empleado = {
      },
      err => console.log(err)
    )
+   location.reload();
   }
 
 }
