@@ -28,14 +28,17 @@
         <div class="card-body">
             <form action="">
                 <div class="form-group">
+                  Nombre
                     <input type="text" name="nombre" [(ngModel)]="obra.nombre"  placeholder="Nombre" class="form-control" autofocus >
     
                 </div>
                 <div class="form-group">
+                  Calle
                   <input type="text" name="calle" [(ngModel)]="obra.calle"  placeholder="Calle" class="form-control" autofocus >
   
               </div>
                 <div class="form-group">
+                  Altura
                     <input type="text" name="altura" [(ngModel)]="obra.altura"  placeholder="Altura" class="form-control" autofocus >
     
                 </div>
@@ -48,7 +51,7 @@
     
                 </div> -->
                 <div class="form-group">
-
+                    Provincia
                     <select  name="provincia" id="provincia" [(ngModel)]="obra.provincia" placeholder="provincia" (change)="capturar()">
                         <option value="0" >Selecciona una opcion</option>
                         <option *ngFor = "let dato of datos">{{dato}}</option>
@@ -56,13 +59,14 @@
                     </select>
                 </div>
                 <div class="form-group">
-
+                  Localidad
                   <select  name="provincia" id="provincia" [(ngModel)]="obra.localidad" placeholder="provincia" (change)="capturarLocalidad()">
                       <option value="0" >Selecciona una opcion</option>
                       <option *ngFor = "let provincia of provincias">{{provincia}}</option>
                     
                   </select>
               </div>
+              Fecha de inicio (AAAA/MM/DD)
                 <div class="form-group">
                     <input type="text" name="FechaInicio"  [(ngModel)]="obra.fechaInicio" placeholder="Fecha de Inicio" class="form-control" autofocus >
     

@@ -26,11 +26,13 @@
 <div class="col-md-4" *ngFor="let empleado of empleados">
     <div class="card text-center">
     <div class="card-header">
-        {{empleado.nombre}},{{empleado.apellido}},{{empleado.legajo}}
+        {{empleado.nombre}} {{empleado.apellido}} Legajo:{{empleado.legajo}}
         <button (click)="eliminarEmpleado(empleado.id)">Eliminar</button>
     </div>
     <div class="card-body">
-
+      DNI :{{empleado.dni}} <br>
+      Teléfono: {{empleado.telefono}}<br>
+      Mail: {{empleado.mail}}
     </div>
 </div>
 </div>
