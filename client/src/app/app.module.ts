@@ -15,6 +15,7 @@ import { EmpleadoService } from './services/empleado.service';
 import { ObraFormComponent } from './components/obra-form/obra-form.component';
 import { ObrasService } from './services/obras.service';
 import { ObraListComponent } from './components/obra-list/obra-list.component';
+import { VistaEncargadosComponent } from './components/vista-encargados/vista-encargados.component';
 
  
 
@@ -25,7 +26,10 @@ const routes: Routes = [
   {path: 'ListaEmpleados', component: EmpleadoListComponent},
   {path: 'CreaEmpleados', component: EmpleadoFormComponent},
   {path: 'ListaObras', component: ObraListComponent},
-  {path: 'CrearObra', component: ObraFormComponent},
+  {path: 'CrearObra', component: ObraFormComponent},  
+  {path: 'vistaEncargados', component: VistaEncargadosComponent},  
+
+
 
 ]
 
@@ -39,7 +43,8 @@ const routes: Routes = [
     NavigationComponent,
     InicioSesionComponent,
     ObraFormComponent,
-    ObraListComponent
+    ObraListComponent,
+    VistaEncargadosComponent
   ],
   imports: [
     BrowserModule,

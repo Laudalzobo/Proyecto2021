@@ -14,7 +14,19 @@ export class PrincipalComponent implements OnInit {
 
 
   primeraPagina(){
-    this.router.navigate(['/InicioSesion']);
+    var usuario = (document.getElementById("usuario") as HTMLTextAreaElement).value;
+    console.log(usuario)
+
+    var contraseña = (document.getElementById("contraseña") as HTMLTextAreaElement).value;
+    if ( usuario == "secretaria@gmail.com" && contraseña == "123123") {
+      this.router.navigate(['/InicioSesion']);
+    } 
+    else if ( usuario == "encargado@gmail.com" && contraseña == "123123") {
+        this.router.navigate(['vistaEncargados']);
+    }
+    else {
+      alert('Usuario o contraseña incorrectos')
+    }
   }
 
 }
