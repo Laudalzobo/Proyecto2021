@@ -16,15 +16,28 @@ export class ObraFormComponent implements OnInit {
   @HostBinding('class') classes = "row";
 
   constructor(private obrasService: ObrasService) {
-    this.datos = ["Buenos Aires","Entre rios"];
-    this.provincias = ["La Plata", "Berisso"]
+    this.datos = ["Buenos Aires"];
+    this.provincias = ["Ayacucho", 
+                      "Azul",
+                      "Bahia Blanca",
+                      "Balcarce", 
+                      "Berisso", 
+                      "Brandsen", 
+                      "Campana",
+                      "Dolores",
+                      "Ensenada",
+                      "General belgrano",
+                      "La PLata",
+                      "Quilmes",
+                      "Tigre",
+                      "Zarate" ]
    }
   
   obra: Obra ={
     id: 0,
     nombre: '',
     calle: '',
-    altura: 0,
+    altura: undefined,
     localidad: '',
     provincia: '',
     fechaInicio: '',
@@ -54,6 +67,7 @@ capturarLocalidad() {
      },
      err => console.log(err)
    )
+   location.reload();
   }
 
 }

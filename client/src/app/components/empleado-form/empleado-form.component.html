@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%;">
     <div class="container-fluid">
       <a class="navbar-brand" href="/InicioSesion">GugnerBuilding</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,17 +13,24 @@
             <a class="nav-link" href="/ListaEmpleados">Listar empleados</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/CrearObra">Crear Holaaaa</a>
+            <a class="nav-link" href="/CrearObra">Crear Obra</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Blabla</a>
           </li> -->
         </ul>
+         <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="">Cerrar Sesion</a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
-  
-<div class="col-md-4 offset-md-4">
+  <div class="col-md-3"  >
+    <a class="btn-sm btn-success" role="button" aria-disabled="true" href="javascript:history.back()" >Volver</a>
+ </div>
+<div class="col-md-4 ">
 <div class="card">
     <div class="card-body">
         <form action="">
@@ -44,7 +51,7 @@
             </div>
             <div class="form-group">
               Legajo
-                <input type="text" name="legajo" [(ngModel)]="empleado.legajo" placeholder="Legajo" class="form-control" autofocus >
+                <input  type="text" name="legajo" [(ngModel)]="empleado.legajo" placeholder="Legajo" class="form-control" autofocus >
 
             </div>
             <div class="form-group">

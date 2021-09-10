@@ -15,8 +15,8 @@ empleado: Empleado = {
   
   nombre: '',
   apellido: '',
-  dni: 0,
-  legajo: 0,
+  dni: undefined,
+  legajo: undefined,
   mail: '',
   telefono: 0,
 

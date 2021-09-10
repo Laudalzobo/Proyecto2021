@@ -18,4 +18,15 @@ export class ObraListComponent implements OnInit {
     )
   }
 
+  eliminarObra(id: string){
+    this.obrasService.deleteObra(id).subscribe(
+      res => {
+        console.log(res)
+      
+      },
+      err => console.log(err)
+    )
+     location.reload();
+   }
+
 }
