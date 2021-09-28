@@ -2,12 +2,12 @@ import { Request, Response} from 'express';
 import PoolConnection from 'mysql2/typings/mysql/lib/PoolConnection';
 import pool from '../database';
 
-class ObrasController {
+class obrasEmpleadoController {
 
 
 
     public async list (req: Request, res: Response) {
-        await pool.query('SELECT * FROM obra', function(err, result, fields) {
+        await pool.query('SELECT * FROM obras_empleados', function(err, result, fields) {
             if (err) throw err;
             res.json(result);
         });
@@ -19,7 +19,7 @@ class ObrasController {
 
     public async getOne(req: Request, res: Response): Promise<void> {
         const {id} = req.params;
-        const obra = await pool.query('SELECT * FROM obra WHERE id= ?',[id], function(err,result, fields){
+        const obra = await pool.query('SELECT * FROM obras_empleados WHERE id= ?',[id], function(err,result, fields){
             console.log(id);
             res.json({obra:result});
         });
@@ -27,8 +27,8 @@ class ObrasController {
     }
 
     public async create (req: Request, res: Response): Promise<void> {
-        await pool.query('INSERT INTO obra set ?', [req.body], function(err,result,fields) {
-            res.json({result: result,fields:fields});
+        await pool.query('INSERT INTO obras_empleados set ?', [req.body], function(err,result,fields) {
+            res.json({err:err,result: result,fields:fields});
            
         });
             
@@ -39,7 +39,7 @@ class ObrasController {
 
     public async update(req: Request, res:Response ): Promise<void> {
         const {id} = req.params;
-        await pool.query('UPDATE obra set ? WHERE id = ?', [req.body, id], function(err,result,fields) {
+        await pool.query('UPDATE obras_empleados set ? WHERE id = ?', [req.body, id], function(err,result,fields) {
             res.json({message: 'La obra fue actualizada'});
         });
         
@@ -47,7 +47,7 @@ class ObrasController {
 
     public async delete(req: Request, res:Response) {
         const {id} = req.params;
-        await pool.query('DELETE FROM obra WHERE id = ?', [id], function(err,result,fields) {
+        await pool.query('DELETE FROM obras_empleados WHERE id = ?', [id], function(err,result,fields) {
             res.send({text: 'La obra fue eliminada'});
         });
         
@@ -55,5 +55,5 @@ class ObrasController {
     }
 }
 
-export const obrasController = new ObrasController();
-export default obrasController;
+export const obrasEmpleadoControllerController = new obrasEmpleadoController();
+export default obrasEmpleadoController;

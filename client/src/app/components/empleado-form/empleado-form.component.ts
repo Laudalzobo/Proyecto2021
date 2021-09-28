@@ -18,7 +18,7 @@ empleado: Empleado = {
   dni: undefined,
   legajo: undefined,
   mail: '',
-  telefono: 0,
+  telefono: undefined,
 
   created_at: new Date()
   

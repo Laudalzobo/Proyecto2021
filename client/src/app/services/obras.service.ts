@@ -16,7 +16,7 @@ export class ObrasService {
   }
 
   getObra(id: string){
-    return this.http.get(`http://localhost:3000/api/obras${id}`);
+    return this.http.get(`http://localhost:3000/api/obras/${id}`);
   }
 
   saveObra(obra: Obra){

@@ -37,8 +37,9 @@
     <div class="card text-center">
     <div class="card-header">
         {{obra.nombre}}
-        {{obra.altura}}
+        Calle: {{obra.calle}} {{obra.altura}}
         <button (click)="eliminarObra(obra.id)">Eliminar</button>
+        <button (click)="verMas(obra.id)">Ver mas</button>
     </div>
     <div class="card-body">
 

@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import objetoRoutes from './routes/objetoRoutes';
 import obrasRoutes from './routes/obrasRoutes';
+import obrasEmpleadoRoutes from './routes/obrasEmpleadoRoutes';
 
 
 class Server {
@@ -30,6 +31,7 @@ routes() : void {
     this.app.use('/',indexRoutes);
     this.app.use('/api/objeto', objetoRoutes);
     this.app.use('/api/obras', obrasRoutes);
+    this.app.use('/api/obrasempleados', obrasEmpleadoRoutes)
 
 }
 

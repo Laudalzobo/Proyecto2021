@@ -12,12 +12,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.obrasController = void 0;
+exports.obrasEmpleadoControllerController = void 0;
 const database_1 = __importDefault(require("../database"));
-class ObrasController {
+class obrasEmpleadoController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('SELECT * FROM obra', function (err, result, fields) {
+            yield database_1.default.query('SELECT * FROM obras_empleados', function (err, result, fields) {
                 if (err)
                     throw err;
                 res.json(result);
@@ -27,7 +27,7 @@ class ObrasController {
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const obra = yield database_1.default.query('SELECT * FROM obra WHERE id= ?', [id], function (err, result, fields) {
+            const obra = yield database_1.default.query('SELECT * FROM obras_empleados WHERE id= ?', [id], function (err, result, fields) {
                 console.log(id);
                 res.json({ obra: result });
             });
@@ -35,15 +35,15 @@ class ObrasController {
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO obra set ?', [req.body], function (err, result, fields) {
-                res.json({ result: result, fields: fields });
+            yield database_1.default.query('INSERT INTO obras_empleados set ?', [req.body], function (err, result, fields) {
+                res.json({ err: err, result: result, fields: fields });
             });
         });
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('UPDATE obra set ? WHERE id = ?', [req.body, id], function (err, result, fields) {
+            yield database_1.default.query('UPDATE obras_empleados set ? WHERE id = ?', [req.body, id], function (err, result, fields) {
                 res.json({ message: 'La obra fue actualizada' });
             });
         });
@@ -51,11 +51,11 @@ class ObrasController {
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('DELETE FROM obra WHERE id = ?', [id], function (err, result, fields) {
+            yield database_1.default.query('DELETE FROM obras_empleados WHERE id = ?', [id], function (err, result, fields) {
                 res.send({ text: 'La obra fue eliminada' });
             });
         });
     }
 }
-exports.obrasController = new ObrasController();
-exports.default = exports.obrasController;
+exports.obrasEmpleadoControllerController = new obrasEmpleadoController();
+exports.default = obrasEmpleadoController;
