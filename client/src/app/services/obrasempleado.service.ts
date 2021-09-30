@@ -12,6 +12,10 @@ export class ObrasempleadoService {
 
   constructor(private http: HttpClient) { }
 
+  getEmpleados(id: string) {
+    return this.http.get(`http://localhost:3000/api/obrasempleados/empleados/${id}`);
+  }
+
   getObrasEmpleado(){
     return this.http.get(`http://localhost:3000/api/obrasempleados`);
   }
@@ -28,6 +32,7 @@ export class ObrasempleadoService {
     return this.http.delete(`http://localhost:3000/api/obrasempleados/${id}`);
   }
 
+  
  
   
 }

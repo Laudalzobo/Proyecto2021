@@ -3,7 +3,9 @@
     <div class="card-header">
         {{obra.nombre}}
         Calle: {{obra.calle}} {{obra.altura}}
-        
+        <p *ngFor =" let empleado of empleados">
+            {{empleado.nombre}}, {{empleado.apellido}}
+        </p>
     </div>
     <div class="card-body">
 

@@ -34,3 +34,10 @@ fechaInicio DATE,
 PRIMARY KEY(id)
 
 );
+
+
+CREATE TABLE obras_empleados(
+id INT NOT NULL AUTO_INCREMENT,
+idEmpleado INT NOT NULL,
+idObra INT NOT NULL
+);

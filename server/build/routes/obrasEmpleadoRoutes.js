@@ -13,6 +13,7 @@ class ObrasEmpleadoRoutes {
         this.router.delete('/:id', obrasEmpleadoController_1.obrasEmpleadoControllerController.delete);
         this.router.put('/:id', obrasEmpleadoController_1.obrasEmpleadoControllerController.update);
         this.router.get('/:id', obrasEmpleadoController_1.obrasEmpleadoControllerController.getOne);
+        this.router.get('/empleados/:id', obrasEmpleadoController_1.obrasEmpleadoControllerController.getOneEmpleados);
     }
 }
 const obrasEmpleadoRoutes = new ObrasEmpleadoRoutes();

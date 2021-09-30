@@ -14,6 +14,7 @@ class ObrasEmpleadoRoutes{
         this.router.delete('/:id', obrasEmpleadoControllerController.delete);
         this.router.put('/:id', obrasEmpleadoControllerController.update);
         this.router.get('/:id', obrasEmpleadoControllerController.getOne);
+        this.router.get('/empleados/:id', obrasEmpleadoControllerController.getOneEmpleados);
     }
 }
 

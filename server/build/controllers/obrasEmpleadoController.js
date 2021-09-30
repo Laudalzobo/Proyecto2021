@@ -33,6 +33,15 @@ class obrasEmpleadoController {
             });
         });
     }
+    getOneEmpleados(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const obra = yield database_1.default.query('SELECT nombre,apellido FROM obras_empleados as o inner join empleado as e on e.id = o.idEmpleado where o.Idobra =?', [id], function (err, result, fields) {
+                console.log(id);
+                res.json({ empleados: result });
+            });
+        });
+    }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO obras_empleados set ?', [req.body], function (err, result, fields) {
