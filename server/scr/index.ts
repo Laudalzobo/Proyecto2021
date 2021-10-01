@@ -5,6 +5,7 @@ import cors from 'cors';
 import objetoRoutes from './routes/objetoRoutes';
 import obrasRoutes from './routes/obrasRoutes';
 import obrasEmpleadoRoutes from './routes/obrasEmpleadoRoutes';
+import path from 'path';
 
 
 class Server {
@@ -32,6 +33,7 @@ routes() : void {
     this.app.use('/api/objeto', objetoRoutes);
     this.app.use('/api/obras', obrasRoutes);
     this.app.use('/api/obrasempleados', obrasEmpleadoRoutes)
+    this.app.use('/uploads', express.static(path.resolve('uploads')))
 
 }
 

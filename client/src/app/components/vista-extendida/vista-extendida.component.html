@@ -9,4 +9,15 @@
     </div>
     <div class="card-body">
 
+        <div>
+            <input (change)="capturarFile($event)" type="file">
+        </div>
+        <div>
+            <button type="button">
+                Subir archivo
+            </button>
+        </div>
+        <div *ngIf="previsualizacion">
+            <img width="100px" [src]="previsualizacion" alt="">
+        </div>
     </div>
