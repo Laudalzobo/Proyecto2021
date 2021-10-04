@@ -34,18 +34,32 @@
             <form action="">
                 <div class="form-group">
                   Nombre
-                    <input type="text" name="nombre" [(ngModel)]="obra.nombre"  placeholder="Nombre" class="form-control" autofocus required >
+                    <input type="text" name="nombre" [(ngModel)]="obra.nombre"  placeholder="Nombre" class="form-control" autofocus required #nombre="ngModel" >
     
+                </div>
+                <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert alert-danger">
+                   
+                  El campo Nombre es Obligatorio
+                
                 </div>
                 <div class="form-group">
                   Calle
-                  <input type="text" name="calle" [(ngModel)]="obra.calle"  placeholder="Calle" class="form-control" autofocus >
-  
-              </div>
+                  <input type="text" name="calle" [(ngModel)]="obra.calle"  placeholder="Calle" class="form-control" autofocus required #calle="ngModel" >
+                </div>
+                <div *ngIf="calle.invalid && (calle.dirty || calle.touched)" class="alert alert-danger">
+                   
+                  El campo Calle es Obligatorio
+                
+                </div>
                 <div class="form-group">
                   Altura
-                    <input type="text" name="altura" [(ngModel)]="obra.altura"  placeholder="Altura" class="form-control" autofocus >
+                    <input type="number" name="altura" [(ngModel)]="obra.altura"  placeholder="Altura" class="form-control" autofocus required #altura="ngModel" >
     
+                </div>
+                <div *ngIf="altura.invalid && (altura.dirty || altura.touched)" class="alert alert-danger">
+                   
+                  El campo Altura es Obligatorio
+                
                 </div>
                 <!-- <div class="form-group">
                     <input type="text" name="provincia" [(ngModel)]="obra.provincia"  placeholder="Provincia" class="form-control" autofocus >
@@ -57,24 +71,39 @@
                 </div> -->
                 <div class="form-group">
                     Provincia
-                    <select  name="provincia" id="provincia" [(ngModel)]="obra.provincia" placeholder="provincia" (change)="capturar()">
-                        <option value="0" >Selecciona una opcion</option>
+                    <select  name="provincia" id="provincia" [(ngModel)]="obra.provincia" placeholder="Provincia" (change)="capturar()" required #provincia="ngModel">
+                        <option value="0" >Selecciona una opción</option>
                         <option *ngFor = "let dato of datos">{{dato}}</option>
                       
                     </select>
                 </div>
+                <div *ngIf="provincia.invalid && (provincia.dirty || provincia.touched)" class="alert alert-danger">
+                   
+                  El campo Provincia es Obligatorio
+                
+                </div>
                 <div class="form-group">
                   Localidad
-                  <select  name="provincia" id="provincia" [(ngModel)]="obra.localidad" placeholder="provincia" (change)="capturarLocalidad()">
-                      <option value="0" >Selecciona una opcion</option>
+                  <select  name="localidad" id="localidad" [(ngModel)]="obra.localidad" placeholder="Localidad" (change)="capturarLocalidad()" required #localidad="ngModel">
+                      <option value="0" >Selecciona una opción</option>
                       <option *ngFor = "let provincia of provincias">{{provincia}}</option>
                     
                   </select>
               </div>
+              <div *ngIf="localidad.invalid && (localidad.dirty || localidad.touched)" class="alert alert-danger">
+                   
+                El campo Localidad es Obligatorio
+              
+              </div>
               Fecha de inicio 
                 <div class="form-group">
-                    <input type="date" name="FechaInicio"  [(ngModel)]="obra.fechaInicio" placeholder="Fecha de Inicio" class="form-control" autofocus >
+                    <input type="date" name="fechaInicio"  [(ngModel)]="obra.fechaInicio" placeholder="Fecha de Inicio" class="form-control" autofocus required #fechaInicio="ngModel">
     
+                </div>
+                <div *ngIf="fechaInicio.invalid && (fechaInicio.dirty || fechaInicio.touched)" class="alert alert-danger">
+                   
+                  El campo Fecha de Inicio es Obligatorio
+                
                 </div>
 
                 <div class="form-group">

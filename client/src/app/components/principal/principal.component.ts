@@ -22,7 +22,7 @@ export class PrincipalComponent implements OnInit {
       this.router.navigate(['/InicioSesion']);
     } 
     else if ( usuario == "encargado@gmail.com" && contraseña == "123123") {
-        this.router.navigate(['vistaEncargados']);
+        this.router.navigate(['/vistaEncargados']);
     }
     else {
       alert('Usuario o contraseña incorrectos')
