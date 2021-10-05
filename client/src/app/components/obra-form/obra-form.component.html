@@ -31,7 +31,7 @@
 <div class="col-md-4">
     <div class="card">
         <div class="card-body">
-            <form action="">
+            <form #obraForm="ngForm" action="">
                 <div class="form-group">
                   Nombre
                     <input type="text" name="nombre" [(ngModel)]="obra.nombre"  placeholder="Nombre" class="form-control" autofocus required #nombre="ngModel" >
@@ -108,10 +108,11 @@
 
                 <div class="form-group">
                   Empleados
-                  <select  (change)="empleadoSeteado($event)">
+                  <select (change)="empleadoSeteado($event)" required >
                       <option value="0" >Selecciona una opcion</option>
                       <option *ngFor = "let e of empleados;index as i" [value]="i">{{e.nombre}} {{e.apellido}}</option>
                   </select>
+                  
                   <button class="btn btn-success ml-2" (click)="agregarEmpleado()">
                     Agregar
                 </button>
@@ -130,7 +131,7 @@
                   </tr>
                 </tbody>
               </table>
-                <button class="btn btn-success btn-block" (click)="guardarObra()">
+                <button type="submit" class="btn btn-success btn-block" [disabled]="obraForm.form.invalid" (click)="guardarObra()">
                     Guardar
                 </button>
 

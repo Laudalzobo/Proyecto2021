@@ -3,6 +3,7 @@ import { Obra } from 'src/app/models/obra';
 import { EmpleadoService } from 'src/app/services/empleado.service';
 import { ObrasService } from 'src/app/services/obras.service';
 import { ObrasempleadoService } from 'src/app/services/obrasempleado.service';
+import {NgForm} from '@angular/forms';
 @Component({
   selector: 'app-obra-form',
   templateUrl: './obra-form.component.html',

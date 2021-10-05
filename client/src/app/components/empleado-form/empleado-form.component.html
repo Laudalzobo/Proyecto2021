@@ -33,7 +33,7 @@
 <div class="col-md-4 ">
 <div class="card">
     <div class="card-body">
-        <form action="">
+        <form #empleadoForm="ngForm" action="">
             <div class="form-group">
               Nombre
                 <input type="text" name="nombre" class="form-control" [(ngModel)]="empleado.nombre" placeholder="Nombre" autofocus required #nombre="ngModel" >
@@ -109,7 +109,7 @@
               El campo Teléfono es Obligatorio
             
             </div>
-            <button type="submit" class="btn btn-success btn-block" (click)="guardarEmpleado()">
+            <button type="submit" class="btn btn-success btn-block" [disabled]="empleadoForm.form.invalid" (click)="guardarEmpleado()">
                 Guardar
             </button>
         </form>
