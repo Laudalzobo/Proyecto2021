@@ -1,0 +1,38 @@
+.table-asi tr th{
+    border: solid 0.5px rgb(27, 226, 104);
+    
+}
+
+.table-asi tbody tr th{
+    border: solid 0.5px rgb(27, 226, 104);
+    text-align: center;
+}
+
+.table-asi  tr th:last-child{
+    background-color: #ccc;
+}
+.table-asi  tr th:nth-last-child(2){
+    background-color: #ccc;
+}
+.table-asi{
+    line-height: 2em;
+   
+}
+.table-container{
+
+    max-height: 100%;
+    overflow-y: scroll;
+}
+.fija{
+    position: sticky;
+    top:0;
+    background-color: white;
+}
+
+.table-asi tbody tr th:only-child{
+    background-color: white;
+}
+
+.table-asi thead tr th:nth-last-child(2){
+    border: solid 1.5px rgb(27, 226, 104);
+}

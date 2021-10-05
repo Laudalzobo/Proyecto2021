@@ -1,23 +1,134 @@
-<div class="col-md-4" *ngFor="let obra of obras">
-    <div class="card text-center">
-    <div class="card-header">
-        {{obra.nombre}}
-        Calle: {{obra.calle}} {{obra.altura}}
-        <p *ngFor =" let empleado of empleados">
-            {{empleado.nombre}}, {{empleado.apellido}}
-        </p>
-    </div>
-    <div class="card-body">
+<div>
+    <nav class="navbar"style="width: 100%; padding-top:0.2%; padding-bottom:0.2%">
+        <div class="container-fluid " style="margin-top: 5px;">
+        <a class="navbar-brand" href="/InicioSesion">GugnerBuilding</a>
+        </div>
+    </nav>
+  
 
-        <div>
-            <input (change)="capturarFile($event)" type="file">
-        </div>
-        <div>
-            <button type="button">
-                Subir archivo
-            </button>
-        </div>
-        <div *ngIf="previsualizacion">
-            <img width="100px" [src]="previsualizacion" alt="">
-        </div>
+    <div class="card-header" style="width: 100%; padding-left: 5%;" *ngFor="let obra of obras" >
+        
+        
+        <h3 style="font-family: 'Courier New', Courier, monospace;">{{obra.nombre}} - Calle: {{obra.calle}} N {{obra.altura}}</h3>  
+        
     </div>
+    <div class="card" >
+        <div class="card-body" style="height: 480px; ;">
+            <div class="col-md" style=" margin-top: 0%; width: 40%; height: 100%;  margin-top: 0%; float:left; border: solid 1px rgb(27, 226, 104)">
+                <div *ngIf="previsualizacion" style="position: relative; left: 50%; top: 50%; transform: translate(-50%, -60%); ">
+                    <img width="90%" height="90%" [src]="previsualizacion" alt="Card image cap">
+                </div>
+                <div style="display: block; position: absolute; left: 98%; top: 92%; transform: translate(-100%, -100%);">
+                    <input (change)="capturarFile($event)" type="file">
+                </div>
+                <div style="display: block; position: absolute; left: 55%; top: 98%; transform: translate(-100%, -100%);">
+                    <button type="button">
+                        Subir archivo
+                    </button>
+                </div>
+              
+            </div>
+            <div class="col-md" style="height:100%; width: 55%; align-content: flex-start; float:right">
+              
+                <div class="table-container" style="height:50%;">
+                    <h3>Asistencia</h3>
+                    
+                    <table class="table-asi" >
+                        <thead class="fija">
+                            <tr>
+                                <th style="text-align: center;">EMPLEADO</th>
+                                <th>Lunes</th>
+                                <th>Martes</th>
+                                <th>Miercoles</th>
+                                <th>Jueves</th>
+                                
+                                <th>Viernes</th>
+                                <th>Sabado</th>
+                                <th>Domingo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Lyde Erika</th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>Dalzobo Laura</th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>Di Santo Lourdes</th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th></th>
+                                <th></th>
+                                </tr>
+                            <tr>
+                                <th> Pessotano Ariel</th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th> Martin</th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th> Ruben</th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th> Sergio</th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th><input type="checkbox" ></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+              </div>
+                <div style="height: 50%;">
+                    <h3>Movimientos</h3>
+                </div>
+            </div>
+
+        </div>
+    
+    </div>
+</div>
+
