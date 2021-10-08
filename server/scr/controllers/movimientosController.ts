@@ -56,7 +56,7 @@ class movimientosController {
 
     public async delete(req: Request, res:Response) {
         const {id} = req.params;
-        await pool.query('DELETE FROM movieminto WHERE id = ?', [id], function(err,result,fields) {
+        await pool.query('DELETE FROM moviemiento WHERE id = ?', [id], function(err,result,fields) {
             res.send({text: 'El movimiento fue eliminado'});
         });
         

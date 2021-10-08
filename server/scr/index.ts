@@ -3,6 +3,8 @@ import indexRoutes from './routes/indexRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
 import objetoRoutes from './routes/objetoRoutes';
+import movimientosRoutes from './routes/movimientosRoutes';
+import materialRoutes from './routes/materialRoutes';
 import obrasRoutes from './routes/obrasRoutes';
 import obrasEmpleadoRoutes from './routes/obrasEmpleadoRoutes';
 import path from 'path';
@@ -34,7 +36,8 @@ routes() : void {
     this.app.use('/api/obras', obrasRoutes);
     this.app.use('/api/obrasempleados', obrasEmpleadoRoutes)
     this.app.use('/uploads', express.static(path.resolve('uploads')))
-
+    this.app.use('/api/movimientos', movimientosRoutes)
+    this.app.use('/api/material', materialRoutes)
 }
 
 
