@@ -1,6 +1,7 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { Empleado } from 'src/app/models/empleado';
 import {NgForm} from '@angular/forms';
+import Swal from 'sweetalert2';
 
 import { EmpleadoService } from 'src/app/services/empleado.service';
 @Component({
@@ -31,9 +32,11 @@ empleado: Empleado = {
   ngOnInit(): void {}
 
 
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+}
 
-
-  guardarEmpleado() {
+  async guardarEmpleado() {
    delete this.empleado.created_at;
     delete this.empleado.id; 
    this.empleadoService.saveEmpleado(this.empleado)
@@ -43,6 +46,9 @@ empleado: Empleado = {
      },
      err => console.log(err)
    )
+  
+   Swal.fire('', 'La obra ha sido creada con éxito', 'success');
+   await this.delay(4000);
    location.reload();
   }
 

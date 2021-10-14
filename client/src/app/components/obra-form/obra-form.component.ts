@@ -4,6 +4,7 @@ import { EmpleadoService } from 'src/app/services/empleado.service';
 import { ObrasService } from 'src/app/services/obras.service';
 import { ObrasempleadoService } from 'src/app/services/obrasempleado.service';
 import {NgForm} from '@angular/forms';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-obra-form',
   templateUrl: './obra-form.component.html',
@@ -58,6 +59,9 @@ export class ObraFormComponent implements OnInit {
     this.getEmpleados();
 
   }
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+}
 
 capturar() {
   this.verSeleccion = this.opcionSeleccionado; 
@@ -68,7 +72,7 @@ capturarLocalidad() {
 
 }
 
-  guardarObra() {
+  async guardarObra() {
  
     delete this.obra.id; 
    this.obrasService.saveObra(this.obra)
@@ -91,7 +95,10 @@ capturarLocalidad() {
      },
      err => console.log(err)
    )
-  //  location.reload();
+  
+  Swal.fire('', 'La obra ha sido creada con éxito', 'success');
+  await this.delay(4000);
+  location.reload();
   }
 
   getEmpleados(){
