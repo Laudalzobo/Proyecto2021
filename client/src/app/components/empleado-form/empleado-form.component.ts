@@ -47,7 +47,7 @@ empleado: Empleado = {
      err => console.log(err)
    )
   
-   Swal.fire('', 'La obra ha sido creada con éxito', 'success');
+   Swal.fire('', 'El empleado ha sido creado con éxito', 'success');
    await this.delay(4000);
    location.reload();
   }
