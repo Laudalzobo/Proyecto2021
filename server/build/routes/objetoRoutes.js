@@ -4,7 +4,7 @@ const express_1 = require("express");
 const objetosController_1 = require("../controllers/objetosController");
 class ObjetosRoutes {
     constructor() {
-        this.router = (0, express_1.Router)();
+        this.router = express_1.Router();
         this.config();
     }
     config() {

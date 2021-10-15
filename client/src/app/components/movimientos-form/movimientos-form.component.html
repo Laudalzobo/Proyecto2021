@@ -1,0 +1,94 @@
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/InicioSesion">GugnerBuilding</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/CreaEmpleados">Crear empleado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/ListaEmpleados">Listar empleados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/CrearObra">Crear Obra</a>
+          </li>
+          comentado <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Blabla</a>
+          </li> comentado
+        </ul>
+         <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="">Cerrar Sesion</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>-->
+  <div class="col-md-3"  >
+    <a class="btn-sm btn-success" role="button" aria-disabled="true" href="javascript:history.back()" >Volver</a>
+ </div>
+<div class="col-md-4 ">
+<div class="card">
+    <div class="card-body">
+        <form #movimientoForm="ngForm" action="">
+           <!-- <div class="form-group">
+              Material
+             
+               
+                <select  name="material" id="material" [(ngModel)]="movimiento.material" placeholder="Material" (change)="capturar()" required #material="ngModel">
+                    <option value="0" >Selecciona una opción</option>
+                    <option *ngFor = "let m of materiales">{{m.tipo}}</option>
+                  
+                </select>
+           
+
+            </div>-->
+          <div>
+              <select (change)="materialSeteado($event)" required >
+                <option >Selecciona una opcion</option>
+                <option *ngFor = "let material of materiales" [value]="material.tipo">{{material.tipo}}</option>
+              </select>
+            
+
+            </div>
+            
+
+            <div *ngIf="materiales.invalid && (materiales.dirty || materiales.touched)" class="alert alert-danger">
+                   
+                El campo Material es Obligatorio
+              
+              </div>
+                
+            <div class="form-group">
+              Cantidad
+                <input type="text" name="cantidad" [(ngModel)]="movimiento.cantidad"  placeholder="Cantidad" class="form-control" autofocus required #cantidad="ngModel" >
+
+            </div>
+            <div *ngIf="cantidad.invalid && (cantidad.dirty || cantidad.touched)" class="alert alert-danger">
+                   
+              El campo Cantidad es Obligatorio
+            
+            </div>
+            <div class="form-group">
+              Precio Unitario
+                <input type="text" name="precioUnitario" [(ngModel)]="movimiento.precioUnitario"  placeholder="Precio Unitario" class="form-control" autofocus required #precioUnitario="ngModel" >
+
+            </div>
+            <div *ngIf="precioUnitario.invalid && (precioUnitario.dirty || precioUnitario.touched)" class="alert alert-danger">
+                   
+              El campo Precio unitario es Obligatorio
+            
+            </div>
+           
+            <button type="submit" class="btn btn-success btn-block" (click)="guardarMovimiento()">
+                Guardar
+            </button>
+        </form>
+
+    </div>
+
+</div>
+</div>

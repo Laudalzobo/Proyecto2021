@@ -36,7 +36,10 @@ class movimientosController {
     getOneMovimientos(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const obra = yield database_1.default.query('SELECT tipo,cantidad, precioUnitario, precioTotal FROM movimiento as mo inner join material as ma on ma.id = mo.idMaterial where mo.IdMovimiento =?', [id], function (err, result, fields) {
+            /*const obra = await pool.query('SELECT tipo,cantidad, precioUnitario, precioTotal FROM movimiento as mo inner join material as ma on ma.id = mo.idMaterial where mo.IdMovimiento =?',[id], function(err,result, fields){
+            console.log(id);
+            res.json({movimiento:result});*/
+            const movimiento = yield database_1.default.query('SELECT mo.id ,mo.cantidad, precioUnitario, precioTotal, ma.tipo, idObra, o.id, o.nombre  FROM movimiento as mo inner join material as ma on ma.id = mo.idMaterial inner join obra as o on o.id=mo.idObra where mo.idObra= ?', [id], function (err, result, fields) {
                 console.log(id);
                 res.json({ movimiento: result });
             });

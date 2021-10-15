@@ -4,7 +4,7 @@ const express_1 = require("express");
 const obrasEmpleadoController_1 = require("../controllers/obrasEmpleadoController");
 class ObrasEmpleadoRoutes {
     constructor() {
-        this.router = (0, express_1.Router)();
+        this.router = express_1.Router();
         this.config();
     }
     config() {

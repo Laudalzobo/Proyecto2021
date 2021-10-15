@@ -4,7 +4,7 @@ const express_1 = require("express");
 const movimientosController_1 = require("../controllers/movimientosController");
 class MovimientosRoutes {
     constructor() {
-        this.router = (0, express_1.Router)();
+        this.router = express_1.Router();
         this.config();
     }
     config() {

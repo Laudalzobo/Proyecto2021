@@ -14,9 +14,11 @@ import { PrincipalComponent } from './components/principal/principal.component';
 import { EmpleadoService } from './services/empleado.service';
 import { ObraFormComponent } from './components/obra-form/obra-form.component';
 import { ObrasService } from './services/obras.service';
+import { MovimientosService } from './services/movimientos.service';
 import { ObraListComponent } from './components/obra-list/obra-list.component';
 import { VistaEncargadosComponent } from './components/vista-encargados/vista-encargados.component';
 import { VistaExtendidaComponent } from './components/vista-extendida/vista-extendida.component';
+import { MovimientosFormComponent } from './components/movimientos-form/movimientos-form.component';
 
  
 
@@ -30,7 +32,7 @@ const routes: Routes = [
   {path: 'CrearObra', component: ObraFormComponent},  
   {path: 'vistaEncargados', component: VistaEncargadosComponent},  
   {path: 'vistaExtendida/:id', component:  VistaExtendidaComponent},  
-
+  {path: 'movimientosForm/:idObra', component:MovimientosFormComponent}
 
  
 ]
@@ -47,7 +49,8 @@ const routes: Routes = [
     ObraFormComponent,
     ObraListComponent,
     VistaEncargadosComponent,
-    VistaExtendidaComponent
+    VistaExtendidaComponent,
+    MovimientosFormComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ const routes: Routes = [
     HttpClientModule],
   providers: [
     EmpleadoService,
-    ObrasService
+    ObrasService,
+    MovimientosService
   ],
   bootstrap: [AppComponent]
 })
