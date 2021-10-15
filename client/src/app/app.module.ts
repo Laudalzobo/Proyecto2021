@@ -19,6 +19,7 @@ import { ObraListComponent } from './components/obra-list/obra-list.component';
 import { VistaEncargadosComponent } from './components/vista-encargados/vista-encargados.component';
 import { VistaExtendidaComponent } from './components/vista-extendida/vista-extendida.component';
 import { MovimientosFormComponent } from './components/movimientos-form/movimientos-form.component';
+import { VistaExtendidaEncargadoComponent } from './components/vista-extendida-encargado/vista-extendida-encargado.component';
 
  
 
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path: 'CrearObra', component: ObraFormComponent},  
   {path: 'vistaEncargados', component: VistaEncargadosComponent},  
   {path: 'vistaExtendida/:id', component:  VistaExtendidaComponent},  
-  {path: 'movimientosForm/:idObra', component:MovimientosFormComponent}
+  {path: 'movimientosForm/:idObra', component:MovimientosFormComponent},
+  {path: 'vistaExtendidaEncargado/:id', component:VistaExtendidaEncargadoComponent}
 
  
 ]
@@ -50,7 +52,8 @@ const routes: Routes = [
     ObraListComponent,
     VistaEncargadosComponent,
     VistaExtendidaComponent,
-    MovimientosFormComponent
+    MovimientosFormComponent,
+    VistaExtendidaEncargadoComponent
   ],
   imports: [
     BrowserModule,

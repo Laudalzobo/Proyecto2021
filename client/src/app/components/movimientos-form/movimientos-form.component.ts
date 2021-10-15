@@ -23,7 +23,6 @@ export class MovimientosFormComponent implements OnInit {
   movimiento: Movimientos = {
     
     cantidad: undefined,
-    tipo: '',
     precioUnitario: undefined,
     idMaterial:0,
     idObra:'',
@@ -79,10 +78,11 @@ export class MovimientosFormComponent implements OnInit {
         return this.mat
       }*/
     guardarMovimiento() {
-     this.movimiento.idObra=this.idObra
+     this.movimiento.idObra=this.activatedroute.snapshot.paramMap.get('idObra');
      this.movimiento.precioTotal=3*10
       delete this.movimiento.id; 
      this.movimientosService.saveMovimiento(this.movimiento)
+     
      .subscribe(
        res => {
          console.log(res);

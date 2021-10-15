@@ -1,7 +1,7 @@
 <div>
     <nav class="navbar"style="width: 100%; padding-top:0.2%; padding-bottom:0.2%">
         <div class="container-fluid " style="margin-top: 5px;">
-        <a class="navbar-brand" href="/InicioSesion">GugnerBuilding</a>
+        <a class="navbar-brand" href="/vistaEncargados">GugnerBuilding</a>
         </div>
     </nav>
   
@@ -15,17 +15,10 @@
     <div class="card" >
         <div class="card-body" style="height: 480px; ;">
             <div class="col-md" style=" margin-top: 0%; width: 40%; height: 100%;  margin-top: 0%; float:left; border: solid 1px rgb(27, 226, 104)">
-                <div *ngIf="previsualizacion" style="position: relative; left: 50%; top: 50%; transform: translate(-50%, -60%); ">
-                    <img width="90%" height="90%" [src]="previsualizacion" alt="Card image cap">
+                <div style="position: relative; left: 50%; top: 50%; transform: translate(-50%, -60%); ">
+                    <img style="margin-top: 15%;" width="100%" height="100%" src="./../../../assets/plano.jpg" alt="">
                 </div>
-                <div style="display: block; position: absolute; left: 98%; top: 92%; transform: translate(-100%, -100%);">
-                    <input (change)="capturarFile($event)" type="file">
-                </div>
-                <div style="display: block; position: absolute; left: 55%; top: 98%; transform: translate(-100%, -100%);">
-                    <button type="button">
-                        Subir archivo
-                    </button>
-                </div>
+               
               
             </div>
             <div class="col-md" style="height:100%; width: 55%; align-content: flex-start; float:right">
@@ -82,9 +75,7 @@
                       </tr>
                     </tbody>
                   </table>
-                <button (click)="mostrarAgregarMovimientos()" style="background-color:rgb(27, 226, 104); color:white; border-radius: 50%; border:solid 1px rgb(27, 226, 104) ; display: block; position: absolute; left: 70%; top: 68%; transform: translate(-100%, -100%);">
-                    +
-                </button>
+               
                 </div>
             </div>
 
