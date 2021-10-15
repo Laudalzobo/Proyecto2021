@@ -48,88 +48,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th>Lyde Erika</th>
+                            <tr *ngFor =" let empleado of empleados">
+                                <th >{{empleado.nombre}}, {{empleado.apellido}}</th>
                                 <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <th>Dalzobo Laura</th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <th>Di Santo Lourdes</th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th></th>
-                                <th></th>
-                                </tr>
-                            <tr>
-                                <th> Pessotano Ariel</th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <th> Martin</th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <th> Ruben</th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <th> Sergio</th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th><input type="checkbox" ></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
+                                    <th><input type="checkbox" ></th>
+                                    <th><input type="checkbox" ></th>
+                                    <th><input type="checkbox" ></th>
+                                    <th><input type="checkbox" ></th>
+                                    <th></th>
+                                    <th></th>
+                              </tr>
                           
                         </tbody>
                     </table>
               </div>
-                <!--<div style="height: 50%;" *ngFor="let movimiento of movimientos">
-                    <h3>Movimientos</h3>
-                    <li>
-                        {{movimiento.idObra}}
-                    </li>
-                </div>-->
-                <div style="height:50%">
-                <table class="table" style="border:solid 1px rgb(27, 226, 104); overflow-y:scroll ; max-height: 100%;">
+                
+                <div class="table" style="height:50%">
+                    <h3>Movimiento</h3>
+                <table  style="border:solid 1px rgb(27, 226, 104); overflow-y:scroll ; max-height: 100%;">
                     <thead>
                       <tr>
                         <th scope="col">Cantidad</th>
@@ -146,10 +82,10 @@
                       </tr>
                     </tbody>
                   </table>
-                <button (click)="mostrarAgregarMovimientos()" style="background-color:rgb(27, 226, 104); color:white; border-radius: 50%; border:solid 1px rgb(27, 226, 104) ; margin-left: 500px;">
+                <button (click)="mostrarAgregarMovimientos()" style="background-color:rgb(27, 226, 104); color:white; border-radius: 50%; border:solid 1px rgb(27, 226, 104) ; display: block; position: absolute; left: 55%; top: 98%; transform: translate(-100%, -100%);">
                     +
                 </button>
-                
+                </div>
             </div>
 
         </div>

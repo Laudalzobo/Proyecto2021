@@ -36,3 +36,9 @@
 .table-asi thead tr th:nth-last-child(2){
     border: solid 1.5px rgb(27, 226, 104);
 }
+
+.table{
+
+    max-height: 100%;
+    overflow-y: scroll;
+}
