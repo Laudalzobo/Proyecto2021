@@ -18,15 +18,15 @@ export class MovimientosFormComponent implements OnInit {
   verSeleccion: string        = '';
   //material_seleccionado: any;
   mat:any =0;
-  material_seteado='';
+  material_seteado=undefined;
   constructor(private movimientosService: MovimientosService, private materialesService: MaterialesService, private router: Router, private activatedroute: ActivatedRoute, private http:HttpClient) { }
   movimiento: Movimientos = {
     
     cantidad: undefined,
     precioUnitario: undefined,
-    idMaterial:0,
+    idMaterial:undefined,
     idObra:'',
-    precioTotal:0 
+    precioTotal:undefined 
     
     /*created_at: new Date()*/
     
@@ -66,7 +66,7 @@ export class MovimientosFormComponent implements OnInit {
       materialSeteado(e:any){
         this.material_seteado=e.target.value;
         console.log(this.material_seteado)
-        this.movimiento.idMaterial=2
+        
       }
      /* setIdMaterial(){
         for (let i of this.materiales){
@@ -79,7 +79,8 @@ export class MovimientosFormComponent implements OnInit {
       }*/
     guardarMovimiento() {
      this.movimiento.idObra=this.activatedroute.snapshot.paramMap.get('idObra');
-     this.movimiento.precioTotal=3*10
+     this.movimiento.precioTotal=3*10;
+     this.movimiento.idMaterial=this.material_seteado;
       delete this.movimiento.id; 
      this.movimientosService.saveMovimiento(this.movimiento)
      
@@ -90,6 +91,7 @@ export class MovimientosFormComponent implements OnInit {
        err => console.log(err)
      )
      //this.router.navigate([`/vistaExtendida/${this.idObra}`]);
+     location.reload();
     }
 
     

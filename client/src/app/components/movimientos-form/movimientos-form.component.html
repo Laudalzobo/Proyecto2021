@@ -49,7 +49,7 @@
           <div>
               <select (change)="materialSeteado($event)" required >
                 <option >Selecciona una opcion</option>
-                <option *ngFor = "let material of materiales" [value]="material.tipo">{{material.tipo}}</option>
+                <option *ngFor = "let material of materiales" [value]="material.id">{{material.tipo}}</option>
               </select>
             
 
@@ -82,6 +82,7 @@
               El campo Precio unitario es Obligatorio
             
             </div>
+            
            
             <button type="submit" class="btn btn-success btn-block" (click)="guardarMovimiento()">
                 Guardar
