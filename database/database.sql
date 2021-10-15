@@ -41,3 +41,20 @@ id INT NOT NULL AUTO_INCREMENT,
 idEmpleado INT NOT NULL,
 idObra INT NOT NULL
 );
+
+CREATE TABLE movimiento(
+id INT NOT NULL AUTO_INCREMENT,
+idObra INT NOT NULL,
+idMaterial INT NOT NULL,
+cantidad INT NOT NULL,
+precioUnitario FLOAT NOT NULL,
+precioTotal FLOAT NOT NULL,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE material(
+id INT NOT NULL AUTO_INCREMENT,
+tipo VARCHAR(25),
+cantidad INT NOT NULL,
+PRIMARY KEY(id)
+);

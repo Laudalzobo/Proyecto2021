@@ -19,10 +19,13 @@ export class MovimientosFormComponent implements OnInit {
   //material_seleccionado: any;
   mat:any =0;
   material_seteado=undefined;
+ pr:number=0;
+ c:number=0;
+
   constructor(private movimientosService: MovimientosService, private materialesService: MaterialesService, private router: Router, private activatedroute: ActivatedRoute, private http:HttpClient) { }
   movimiento: Movimientos = {
     
-    cantidad: undefined,
+    cantidad: undefined ,
     precioUnitario: undefined,
     idMaterial:undefined,
     idObra:'',
@@ -79,7 +82,10 @@ export class MovimientosFormComponent implements OnInit {
       }*/
     guardarMovimiento() {
      this.movimiento.idObra=this.activatedroute.snapshot.paramMap.get('idObra');
-     this.movimiento.precioTotal=3*10;
+     this.pr= this.movimiento.precioUnitario as number;
+     this.c=this.movimiento.cantidad as number;
+     this.movimiento.precioTotal=this.pr*this.c ;
+     
      this.movimiento.idMaterial=this.material_seteado;
       delete this.movimiento.id; 
      this.movimientosService.saveMovimiento(this.movimiento)
