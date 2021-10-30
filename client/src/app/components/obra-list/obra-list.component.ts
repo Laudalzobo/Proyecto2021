@@ -8,8 +8,10 @@ import { Router } from '@angular/router';
 })
 export class ObraListComponent implements OnInit {
   obras : any = [];
+  
 
   constructor(private obrasService: ObrasService, private router: Router) { }
+
 
   ngOnInit(): void {
     this.obrasService.getObras().subscribe(

@@ -28,7 +28,7 @@ class obrasEmpleadoController {
 
     public async getOneEmpleados (req: Request, res: Response): Promise<void> {
         const {id} = req.params;
-            const obra = await pool.query('SELECT nombre,apellido FROM obras_empleados as o inner join empleado as e on e.id = o.idEmpleado where o.Idobra =?',[id], function(err,result, fields){
+            const obra = await pool.query('SELECT nombre,apellido,id FROM obras_empleados as o inner join empleado as e on e.id = o.idEmpleado where o.Idobra =?',[id], function(err,result, fields){
             console.log(id);
             res.json({empleados:result});
         });

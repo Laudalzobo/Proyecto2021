@@ -13,6 +13,7 @@ const materialRoutes_1 = __importDefault(require("./routes/materialRoutes"));
 const obrasRoutes_1 = __importDefault(require("./routes/obrasRoutes"));
 const obrasEmpleadoRoutes_1 = __importDefault(require("./routes/obrasEmpleadoRoutes"));
 const path_1 = __importDefault(require("path"));
+const asistenciaRoutes_1 = __importDefault(require("./routes/asistenciaRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -34,6 +35,7 @@ class Server {
         this.app.use('/uploads', express_1.default.static(path_1.default.resolve('uploads')));
         this.app.use('/api/movimientos', movimientosRoutes_1.default);
         this.app.use('/api/material', materialRoutes_1.default);
+        this.app.use('/api/asistencia', asistenciaRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

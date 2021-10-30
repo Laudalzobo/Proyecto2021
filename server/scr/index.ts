@@ -8,6 +8,8 @@ import materialRoutes from './routes/materialRoutes';
 import obrasRoutes from './routes/obrasRoutes';
 import obrasEmpleadoRoutes from './routes/obrasEmpleadoRoutes';
 import path from 'path';
+import asistenciaController from './controllers/asistenciaController';
+import asistenciaRoutes from './routes/asistenciaRoutes';
 
 
 class Server {
@@ -38,6 +40,7 @@ routes() : void {
     this.app.use('/uploads', express.static(path.resolve('uploads')))
     this.app.use('/api/movimientos', movimientosRoutes)
     this.app.use('/api/material', materialRoutes)
+    this.app.use('/api/asistencia', asistenciaRoutes)
 }
 
 

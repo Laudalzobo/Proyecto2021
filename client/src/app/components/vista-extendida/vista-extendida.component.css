@@ -8,12 +8,7 @@
     text-align: center;
 }
 
-.table-asi  tr th:last-child{
-    background-color: #ccc;
-}
-.table-asi  tr th:nth-last-child(2){
-    background-color: #ccc;
-}
+
 .table-asi{
     line-height: 2em;
    
@@ -33,9 +28,9 @@
     background-color: white;
 }
 
-.table-asi thead tr th:nth-last-child(2){
+/* .table-asi thead tr th:nth-last-child(2){
     border: solid 1.5px rgb(27, 226, 104);
-}
+} */
 
 .table{
 

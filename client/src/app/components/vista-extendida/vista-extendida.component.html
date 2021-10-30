@@ -31,32 +31,19 @@
             <div class="col-md" style="height:100%; width: 55%; align-content: flex-start; float:right">
               
                 <div class="table-container" style="height:50%;">
-                    <h3>Asistencia</h3>
+                    <h3>Asistencia {{fechaHoy | date: 'dd/MM/yyyy'}}</h3>
                     
                     <table class="table-asi" >
                         <thead class="fija">
                             <tr>
                                 <th style="text-align: center;">EMPLEADO</th>
-                                <th>Lunes</th>
-                                <th>Martes</th>
-                                <th>Miercoles</th>
-                                <th>Jueves</th>
-                                
-                                <th>Viernes</th>
-                                <th>Sabado</th>
-                                <th>Domingo</th>
+                                <th>ASISTENCICA</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor =" let empleado of empleados">
-                                <th >{{empleado.nombre}}, {{empleado.apellido}}</th>
-                                <th><input type="checkbox" ></th>
-                                    <th><input type="checkbox" ></th>
-                                    <th><input type="checkbox" ></th>
-                                    <th><input type="checkbox" ></th>
-                                    <th><input type="checkbox" ></th>
-                                    <th></th>
-                                    <th></th>
+                            <tr *ngFor =" let asistencia of asistencias; let i = index;">
+                                <th >{{asistencia.nombre}}, {{asistencia.apellido}}</th>
+                                <th><input type="checkbox" [(ngModel)]="asistencias[i].presente" (change)="cambiarAsistencia($event,asistencia)"></th>
                               </tr>
                           
                         </tbody>

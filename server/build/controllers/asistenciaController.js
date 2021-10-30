@@ -12,12 +12,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.obrasEmpleadoControllerController = void 0;
+exports.asistenciaController = void 0;
 const database_1 = __importDefault(require("../database"));
-class obrasEmpleadoController {
+class AsistenciaController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('SELECT * FROM obras_empleados', function (err, result, fields) {
+            const { idObra } = req.params;
+            const { fecha } = req.params;
+            const asistencia = yield database_1.default.query('SELECT a.id,a.presente,a.idObra,a.idEmpleado,e.apellido,e.nombre FROM ASISTENCIA as a inner join empleado as e on e.id = a.idEmpleado WHERE idObra=? and fecha=?', [idObra, fecha], function (err, result, fields) {
                 if (err)
                     throw err;
                 res.json(result);
@@ -27,24 +29,15 @@ class obrasEmpleadoController {
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const obra = yield database_1.default.query('SELECT * FROM obras_empleados WHERE id= ?', [id], function (err, result, fields) {
+            const asistencia = yield database_1.default.query('SELECT * FROM asistencia WHERE id= ?', [id], function (err, result, fields) {
                 console.log(id);
-                res.json({ obra: result });
-            });
-        });
-    }
-    getOneEmpleados(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            const obra = yield database_1.default.query('SELECT nombre,apellido,id FROM obras_empleados as o inner join empleado as e on e.id = o.idEmpleado where o.Idobra =?', [id], function (err, result, fields) {
-                console.log(id);
-                res.json({ empleados: result });
+                res.json({ asistencia: result });
             });
         });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO obras_empleados set ?', [req.body], function (err, result, fields) {
+            yield database_1.default.query('INSERT INTO asistencia set ?', [req.body], function (err, result, fields) {
                 res.json({ err: err, result: result, fields: fields });
             });
         });
@@ -52,19 +45,27 @@ class obrasEmpleadoController {
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('UPDATE obras_empleados set ? WHERE id = ?', [req.body, id], function (err, result, fields) {
-                res.json({ message: 'La obra fue actualizada' });
+            const { presente } = req.params;
+            console.log(id, presente);
+            let presenteUpdate;
+            if (presente == "true")
+                presenteUpdate = true;
+            else
+                presenteUpdate = false;
+            yield database_1.default.query('UPDATE asistencia set presente=? WHERE id=?', [presenteUpdate, id], function (err, result, fields) {
+                res.json({ message: 'La asistencia fue actualizada' });
+                console.log(err);
             });
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('DELETE FROM obras_empleados WHERE id = ?', [id], function (err, result, fields) {
-                res.send({ text: 'La obra fue eliminada' });
+            yield database_1.default.query('DELETE FROM asistencia WHERE id = ?', [id], function (err, result, fields) {
+                res.send({ text: 'La asistencia fue eliminada' });
             });
         });
     }
 }
-exports.obrasEmpleadoControllerController = new obrasEmpleadoController();
-exports.default = obrasEmpleadoController;
+exports.asistenciaController = new AsistenciaController();
+exports.default = exports.asistenciaController;
