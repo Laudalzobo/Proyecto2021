@@ -16,13 +16,27 @@
     </div>
   </nav>
   
-<div class="col-md-4" *ngFor="let obra of obras">
-    <div class="card text-center">
-    <div class="card-header">
-        {{obra.nombre}}
-        {{obra.altura}}
-        <button (click)="verMas(obra.id)">Ver mas</button>
+<div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col " *ngFor="let obra of obras">
+      <div class="card h-60">
+        <img src="./../../../assets/plano.jpg" class="card-img-top" alt="...">
+        <div class="card-body" style="height: 20%;">
+          <h5 class="card-title" >{{obra.nombre}}</h5>
+          <p class="card-text">Calle: {{obra.calle}} N°{{obra.altura}}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted" style="text-align: center;">
+           
+          <button (click)="verMas(obra.id)">Ver Más</button>
+          </small>
+        </div>
+      </div>
+  
     </div>
-   
-</div>
+  
+  
+  
+  </div>
+
 </div>
