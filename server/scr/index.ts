@@ -10,6 +10,14 @@ import obrasEmpleadoRoutes from './routes/obrasEmpleadoRoutes';
 import path from 'path';
 import asistenciaController from './controllers/asistenciaController';
 import asistenciaRoutes from './routes/asistenciaRoutes';
+import contadorAsistenciaController from './controllers/contadorasistenciaController';
+import contadorasistenciaRoutes from './routes/contadorasistenciaRoutes';
+import sumaTotalController from './controllers/sumatotalController';
+import sumaTotalRoutes from './routes/sumaTotalRoutes';
+import sumaempleadosRoutes from './routes/sumaempleadosRoutes';
+import contadorobrasRoutes from './routes/contadorobrasRoutes';
+import sumamaterialesRoutes from './routes/sumamaterialesRoutes';
+import presupuestoRoutes from './routes/presupuestoRoutes';
 
 
 class Server {
@@ -40,7 +48,13 @@ routes() : void {
     this.app.use('/uploads', express.static(path.resolve('uploads')))
     this.app.use('/api/movimientos', movimientosRoutes)
     this.app.use('/api/material', materialRoutes)
-    this.app.use('/api/asistencia', asistenciaRoutes)
+    this.app.use('/api/asistencia', asistenciaRoutes);
+    this.app.use('/api/contadorasistencia', contadorasistenciaRoutes);
+    this.app.use('/api/sumatotalasistencias', sumaTotalRoutes);
+    this.app.use('/api/sumaempleados', sumaempleadosRoutes);
+    this.app.use('/api/sumaobras', contadorobrasRoutes);
+    this.app.use('/api/sumamateriales', sumamaterialesRoutes);
+    this.app.use('/api/presupuesto', presupuestoRoutes);
 }
 
 

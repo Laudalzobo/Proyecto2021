@@ -20,6 +20,7 @@ import { VistaEncargadosComponent } from './components/vista-encargados/vista-en
 import { VistaExtendidaComponent } from './components/vista-extendida/vista-extendida.component';
 import { MovimientosFormComponent } from './components/movimientos-form/movimientos-form.component';
 import { VistaExtendidaEncargadoComponent } from './components/vista-extendida-encargado/vista-extendida-encargado.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
  
 
@@ -34,8 +35,8 @@ const routes: Routes = [
   {path: 'vistaEncargados', component: VistaEncargadosComponent},  
   {path: 'vistaExtendida/:id', component:  VistaExtendidaComponent},  
   {path: 'movimientosForm/:idObra', component:MovimientosFormComponent},
-  {path: 'vistaExtendidaEncargado/:id', component:VistaExtendidaEncargadoComponent}
-
+  {path: 'vistaExtendidaEncargado/:id', component:VistaExtendidaEncargadoComponent},
+  {path: 'dashboard', component:DashboardComponent}
  
 ]
 
@@ -53,7 +54,8 @@ const routes: Routes = [
     VistaEncargadosComponent,
     VistaExtendidaComponent,
     MovimientosFormComponent,
-    VistaExtendidaEncargadoComponent
+    VistaExtendidaEncargadoComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

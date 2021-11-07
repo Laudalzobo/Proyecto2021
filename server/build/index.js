@@ -14,6 +14,12 @@ const obrasRoutes_1 = __importDefault(require("./routes/obrasRoutes"));
 const obrasEmpleadoRoutes_1 = __importDefault(require("./routes/obrasEmpleadoRoutes"));
 const path_1 = __importDefault(require("path"));
 const asistenciaRoutes_1 = __importDefault(require("./routes/asistenciaRoutes"));
+const contadorasistenciaRoutes_1 = __importDefault(require("./routes/contadorasistenciaRoutes"));
+const sumaTotalRoutes_1 = __importDefault(require("./routes/sumaTotalRoutes"));
+const sumaempleadosRoutes_1 = __importDefault(require("./routes/sumaempleadosRoutes"));
+const contadorobrasRoutes_1 = __importDefault(require("./routes/contadorobrasRoutes"));
+const sumamaterialesRoutes_1 = __importDefault(require("./routes/sumamaterialesRoutes"));
+const presupuestoRoutes_1 = __importDefault(require("./routes/presupuestoRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -36,6 +42,12 @@ class Server {
         this.app.use('/api/movimientos', movimientosRoutes_1.default);
         this.app.use('/api/material', materialRoutes_1.default);
         this.app.use('/api/asistencia', asistenciaRoutes_1.default);
+        this.app.use('/api/contadorasistencia', contadorasistenciaRoutes_1.default);
+        this.app.use('/api/sumatotalasistencias', sumaTotalRoutes_1.default);
+        this.app.use('/api/sumaempleados', sumaempleadosRoutes_1.default);
+        this.app.use('/api/sumaobras', contadorobrasRoutes_1.default);
+        this.app.use('/api/sumamateriales', sumamaterialesRoutes_1.default);
+        this.app.use('/api/presupuesto', presupuestoRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {
