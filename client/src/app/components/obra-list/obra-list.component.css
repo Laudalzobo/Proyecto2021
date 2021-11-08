@@ -2,10 +2,55 @@
 
     margin-left: 35%;
     margin-top: 0.5%;
+    
 }
 
 .col-md-3{
     margin-left: 6%;
     margin-top: 3%;
-    float: left;
+    float: fixed;
+}
+
+.row row-cols-1 row-cols-md-3 g-4{
+ margin-top: 5%;
+ /*margin-left: 20%;*/
+ margin-right: 100%;
+ width: 80%;
+ height: 80%;
+ 
+ 
+}
+
+
+.card:hover {
+   box-shadow: 0.5px 0.5px 20px -5px rgb(9, 219, 104);
+   height: 100%;
+   transform: translate(0, -5px);
+   -webkit-transform: translate(0,-5px);
+   -o-transform: translate(0,-5px); 
+   -moz-transform: translate(0,-5px);
+   
+}
+.card-body{
+    height: 30%;
+}
+
+
+.card-img-top{
+    width: 70%;
+    height: 60%;
+    margin-left: 12%;
+}
+
+.col{
+    width: 200px;
+    margin-top: 5%;
+    height: 30%;
+}
+
+.card h-60{
+    height: 250px;
+}
+.text-muted{
+    display: block;
 }
