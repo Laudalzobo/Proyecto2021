@@ -10,8 +10,8 @@ import { EmpleadoListComponent } from './components/empleado-list/empleado-list.
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { PrincipalComponent } from './components/principal/principal.component';
-
 import { EmpleadoService } from './services/empleado.service';
+import {FilterPipe} from '../app/filter.pipe';
 import { ObraFormComponent } from './components/obra-form/obra-form.component';
 import { ObrasService } from './services/obras.service';
 import { MovimientosService } from './services/movimientos.service';
@@ -20,6 +20,7 @@ import { VistaEncargadosComponent } from './components/vista-encargados/vista-en
 import { VistaExtendidaComponent } from './components/vista-extendida/vista-extendida.component';
 import { MovimientosFormComponent } from './components/movimientos-form/movimientos-form.component';
 import { VistaExtendidaEncargadoComponent } from './components/vista-extendida-encargado/vista-extendida-encargado.component';
+import { AsistenciaxpersonaComponent } from './components/asistenciaxpersona/asistenciaxpersona.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
  
@@ -36,7 +37,8 @@ const routes: Routes = [
   {path: 'vistaExtendida/:id', component:  VistaExtendidaComponent},  
   {path: 'movimientosForm/:idObra', component:MovimientosFormComponent},
   {path: 'vistaExtendidaEncargado/:id', component:VistaExtendidaEncargadoComponent},
-  {path: 'dashboard', component:DashboardComponent}
+  {path: 'dashboard', component:DashboardComponent},
+  {path: 'detalle', component: AsistenciaxpersonaComponent}
  
 ]
 
@@ -55,7 +57,9 @@ const routes: Routes = [
     VistaExtendidaComponent,
     MovimientosFormComponent,
     VistaExtendidaEncargadoComponent,
-    DashboardComponent
+    DashboardComponent,
+    AsistenciaxpersonaComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,8 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule],
+    HttpClientModule,
+    ],
   providers: [
     EmpleadoService,
     ObrasService,
